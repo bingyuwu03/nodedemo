@@ -1,16 +1,17 @@
 {
-  "name": "stock-ticker",
+  "name": "stock",
   "version": "1.0.0",
-  "description": "node app for searching the company name and stock ticker",
   "main": "stock.js",
   "scripts": {
-  "start": "node stock.js"
-},
-  "repository": {
-  "type": "git",
-  "url": "https://github.com/bingyuwu03/nodedemo.git"
-},
-  "author": "Bingyu",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "homepage": "http://localhost:8080"
+  "dependencies": {
+    "node": "^22.0.0",
+    "nodejs": "^0.0.0"
+  },
+  "devDependencies": {},
+  "description": ""
 }
