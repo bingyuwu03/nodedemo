@@ -1,18 +1,26 @@
 {
   "name": "ex",
   "version": "1.0.0",
+  "description": "Your project description",
   "main": "ex.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ex.js" 
   },
   "keywords": [],
-  "author": "",
+  "author": "Your Name",
   "license": "ISC",
-  "dependencies": {
-    "node": "^22.0.0",
-    "nodejs": "^0.0.0",
-    "mongodb": "6.5.0"
+  "engines": {
+    "node": "14.x" 
   },
-  "devDependencies": {},
-  "description": ""
+  "dependencies": {
+    "mongodb": "6.5.0" 
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bingyuwu03/nodedemo.git" 
+  },
+  "scripts": {
+    "start": "node ex.js" 
+  }
 }
+
