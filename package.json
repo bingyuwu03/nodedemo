@@ -1,19 +1,16 @@
 {
-  "name": "helloapp",
+  "name": "stock-ticker",
   "version": "1.0.0",
-  "description": "node app ",
-  "main": "hello_app.js",
+  "description": "node app for searching the company name and stock ticker",
+  "main": "stock.js",
   "scripts": {
-  "start": "node hello_app.js"
+  "start": "node stock.js"
 },
   "repository": {
   "type": "git",
-  "url": ""
+  "url": "https://github.com/bingyuwu03/nodedemo.git"
 },
-  "author": "",
+  "author": "Bingyu",
   "license": "ISC",
-  "bugs": {
-  "url": ""
-},
-  "homepage": ""
+  "homepage": "http://localhost:8080"
 }
