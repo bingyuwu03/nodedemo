@@ -4,23 +4,19 @@
   "description": "Your project description",
   "main": "ex.js",
   "scripts": {
-    "start": "node ex.js" 
+    "start": "node ex.js"
   },
   "keywords": [],
   "author": "Your Name",
   "license": "ISC",
   "engines": {
-    "node": "14.x" 
+    "node": "14.x"
   },
   "dependencies": {
-    "mongodb": "6.5.0" 
+    "mongodb": "6.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bingyuwu03/nodedemo.git" 
-  },
-  "scripts": {
-    "start": "node ex.js" 
+    "url": "https://github.com/bingyuwu03/nodedemo.git"
   }
 }
-
