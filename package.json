@@ -1,5 +1,6 @@
 {
-  
+  "name": "mongodb",
+  "version": "6.5.0",
   "description": "Your project description",
   "main": "ex.js",
   "scripts": {
@@ -12,11 +13,11 @@
     "node": "14.x"
   },
   "dependencies": {
-    "mongodb" : "6.5.0"
+    "mongodb": "6.5.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bingyuwu03/nodedemo.git"
+    "url": "git+https://github.com/bingyuwu03/nodedemo.git"
   },
   "devDependencies": {}
 }
