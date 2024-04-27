@@ -1,6 +1,5 @@
 {
-  "name": "mongodb",
-  "version": "6.5.0",
+  
   "description": "Your project description",
   "main": "ex.js",
   "scripts": {
