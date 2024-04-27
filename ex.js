@@ -2,6 +2,8 @@ const http = require('http');
 const url = require('url');
 const { MongoClient } = require('mongodb');
 
+const port = process.env.PORT || 8080; // 使用 Heroku 分配的动态端口，如果没有分配，则使用 8080
+
 const connstr = "mongodb+srv://bingyuwu03:Qsrmmwubingyu123@cluster0.ncotu9a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = 'Stock';
 const collectionName = 'PublicCompanies';
@@ -57,6 +59,6 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(8080, () => {
-    console.log('Server is running on http://localhost:8080');
+server.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
 });
