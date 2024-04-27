@@ -1,5 +1,5 @@
-const http = require("http");
-const url = require("url");
+const http = require('http');
+const url = require('url');
 const { MongoClient } = require('mongodb');
 
 const connstr = "mongodb+srv://bingyuwu03:Qsrmmwubingyu123@cluster0.ncotu9a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
@@ -21,15 +21,15 @@ const server = http.createServer((req, res) => {
                 <input type='submit' value='Submit'>
             </form>`;
         res.write(formHTML);
-        res.end();
+        
     } else if (path == "/process") {
+        res.write("hi");
         const query = url.parse(req.url, true).query;
         const searchType = query.type;
         const searchTerm = query.search;
 
         try {
-            const client = new MongoClient(connstr, { useNewUrlParser: true, useUnifiedTopology: true });
-            client.connect(async err => {
+            MongoClient.connect(connstr, (err, client) => {
                 if (err) {
                     console.error(err);
                     res.write("An error occurred.");
@@ -46,18 +46,24 @@ const server = http.createServer((req, res) => {
                     filter = { "name": searchTerm };
                 }
 
-                const companies = await collection.find(filter).toArray();
+                collection.find(filter).toArray((err, companies) => {
+                    if (err) {
+                        console.error(err);
+                        res.write("An error occurred.");
+                        res.end();
+                        return;
+                    }
+                    res.write("<h2>Search Results:</h2>");
+                    companies.forEach(company => {
+                        res.write(`<p>Name: ${company.name}, Ticker: ${company.ticker}, Price: ${company.price}</p>`);
+                    });
 
-                res.write("<h2>Search Results:</h2>");
-                companies.forEach(company => {
-                    res.write(`<p>Name: ${company.name}, Ticker: ${company.ticker}, Price: ${company.price}</p>`);
+                    console.log("Search Results:");
+                    console.log(companies);
+
+                    client.close();
+                    res.end();
                 });
-
-                console.log("Search Results:");
-                console.log(companies);
-
-                client.close();
-                res.end();
             });
         } catch (error) {
             console.error(error);
@@ -70,4 +76,3 @@ const server = http.createServer((req, res) => {
 server.listen(8080, () => {
     console.log('Server is running on http://localhost:8080');
 });
-
