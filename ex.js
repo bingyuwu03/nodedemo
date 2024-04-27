@@ -2,14 +2,11 @@ const http = require('http');
 const url = require('url');
 const { MongoClient } = require('mongodb');
 
-const port = process.env.PORT || 8080; 
-
 const connstr = "mongodb+srv://bingyuwu03:Qsrmmwubingyu123@cluster0.ncotu9a.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const dbName = 'Stock';
 const collectionName = 'PublicCompanies';
 
 const server = http.createServer(async (req, res) => {
-    console.log("Success");
     res.writeHead(200, { 'Content-Type': 'text/html' });
     const path = url.parse(req.url, true).pathname;
     if (path == "/") {
@@ -59,6 +56,6 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-server.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
+server.listen(8080, () => {
+    console.log('Server is running on http://localhost:8080');
 });
