@@ -12,9 +12,7 @@
   "engines": {
     "node": "14.x"
   },
-  "dependencies": {
-    "mongodb": "6.5.0"
-  },
+  "dependencies": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bingyuwu03/nodedemo.git"
